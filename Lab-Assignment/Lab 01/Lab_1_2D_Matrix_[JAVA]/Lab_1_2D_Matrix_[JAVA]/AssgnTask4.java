@@ -74,7 +74,6 @@ class AssgnTask4{
                 rotateSecret(board);
             }
         }
-
         // Print recovered message
         for(int i = 0; i < n; i++){
 
