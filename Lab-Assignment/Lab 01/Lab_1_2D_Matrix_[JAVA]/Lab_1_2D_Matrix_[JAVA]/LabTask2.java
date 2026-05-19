@@ -10,9 +10,30 @@ class LabTask2{
 
         //TO DO
         //DELETE the following return statement when you're ready to return the 2D array
-        return null;
-
+        int row = matrix.length;
+        int col = matrix[0].length;
+        // Store column sums
+        Integer[] colSum = new Integer[col];
+        // Calculate column-wise sums
+        for (int j = 0; j < col; j++) {
+            int sum = 0;
+            for (int i = 0; i < row; i++) {
+                sum += matrix[i][j];
+            }
+            colSum[j] = sum;
+        }
+        // Difference array
+        Integer[] diff = new Integer[col - 1];
+        // Calculate differences
+        for (int i = 0; i < col - 1; i++) {
+            diff[i] = colSum[i + 1] - colSum[i];
+        }
+        return diff;
     }
+  
+        // return null;
+
+
 
     //DO NOT CHANGE ANY DRIVER CODE BELOW THIS LINE
     public static void main(String[] args){
