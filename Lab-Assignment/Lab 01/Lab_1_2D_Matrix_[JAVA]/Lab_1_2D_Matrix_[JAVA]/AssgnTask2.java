@@ -9,8 +9,32 @@ class AssgnTask2{
         
         //TO DO
 
+        
+        int row = matrix.length;
+        int col = matrix[0].length;
+
+        // New compressed matrix
+        Integer[][] ans = new Integer[row / 2][col / 2];
+
+        // Traverse 2x2 blocks
+        for (int i = 0; i < row; i += 2) {
+
+            for (int j = 0; j < col; j += 2) {
+
+                int sum =
+                        matrix[i][j]
+                      + matrix[i][j + 1]
+                      + matrix[i + 1][j]
+                      + matrix[i + 1][j + 1];
+
+                ans[i / 2][j / 2] = sum;
+            }
+        }
+
+        return ans;
+
         //remove the line below and return the newly created Compressed 2D matrix
-        return null;
+        //return null;
     }
 
     //DO NOT CHANGE ANY DRIVER CODE BELOW THIS LINE
